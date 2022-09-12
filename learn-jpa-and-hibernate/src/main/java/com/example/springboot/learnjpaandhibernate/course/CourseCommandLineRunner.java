@@ -26,7 +26,10 @@ public class CourseCommandLineRunner implements CommandLineRunner {
         repository.save(new Course(2, "Learn Spring with rafa", "rafa"));
         repository.save(new Course(3, "Learn Javascript with addy", "addy"));
         repository.save(new Course(4, "Learn HTML and CSS with rodrigo", "rodrigo"));
-        repository.save(new Course(5, "Learn Python with damian", "damian"));
+        repository.save(new Course(5, "Learn Python with damian", "damian"));        repository.save(new Course(2, "Learn Spring with rafa", "rafa"));
+        repository.save(new Course(6, "Learn Spring Security with rafa", "rafa"));
+        repository.save(new Course(7, "Learn Spring Data JPA with rafa", "rafa"));
+
 
         repository.deleteById(1l);
 
@@ -34,6 +37,11 @@ public class CourseCommandLineRunner implements CommandLineRunner {
         System.out.println(repository.findById(4l));
 
         repository.save(new Course (2, "Learn JPA with rafa", "rafa"));
-        repository.count();
+        System.out.println(repository.count());
+        System.out.println(repository.findAll());
+
+        System.out.println(repository.findByAuthor("rafa"));
+
+        System.out.println(repository.findByName("Learn HTML and CSS with rodrigo"));
     }
 }
